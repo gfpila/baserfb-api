@@ -15,7 +15,7 @@ import json
 def get_estabelecimentos(request):
     
     if request.method == 'GET':
-        estabelecimentos = Estabelecimentos.objects.all()[:1000]
+        estabelecimentos = Estabelecimentos.objects.all()[:100]
         serializer = EstabelecimentoSerializer(estabelecimentos, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
